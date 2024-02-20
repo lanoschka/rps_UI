@@ -1,0 +1,16 @@
+body, html {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+   
+    background-color: #1b232c;
+    color:rgb(218, 224, 224);
+}
+html{
+    height: 100%;
+}
+body{
+    min-height: 100%;
+    position: relative;
+}
