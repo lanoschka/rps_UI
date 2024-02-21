@@ -26,3 +26,19 @@ body{
     border-bottom:solid 5px #3b454e;
 
 }
+#p{
+    /* text-shadow: 5px black; */
+    color:#ffc83d;
+    font-size: 100px;
+    margin:0px 20px 10px;
+}
+#r{
+    color:#d48c00;
+    font-size: 70px;
+    margin: 0 0px;
+}
+#s {
+    color:#d48c00;
+    font-size: 70px;
+    margin: 0 0px;
+}
