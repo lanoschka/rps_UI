@@ -9,7 +9,6 @@ function getComputerChoice(){
     return computerChoice;
 }
 
-console.log(getComputerChoice()); //test
 
 function playRound(playerChoice){
 
@@ -34,22 +33,20 @@ function playRound(playerChoice){
       computerScore++;
     }
 
-    contentUpdate(resultMessage, resultDisclaimer);
-    updateChoices(playerChoice,computerChoice);
+    contentUpdate(resultMessage, resultDisclaimer, playerChoice, computerChoice);
 
 } 
 
-function contentUpdate(resultMessage, resultDisclaimer){
+function contentUpdate(resultMessage, resultDisclaimer, playerChoice, computerChoice){
 
     document.getElementById('playerScore').textContent = `PLAYER: ${playerScore}`;
     document.getElementById('computerScore').textContent = `COMPUTER: ${computerScore}`;
   
     document.getElementById('score-info').innerText = resultMessage;
   
-    
-    // updateChoices(playerChoice, computerChoice);
-  
     document.getElementById('result').innerText = resultDisclaimer;
+
+    updateChoices(playerChoice, computerChoice);
 
 }
 
