@@ -9,4 +9,30 @@ function getComputerChoice(){
     return computerChoice;
 }
 
-console.log(getComputerChoice());
+console.log(getComputerChoice()); //test
+
+function playRound(playerChoice){
+
+    let resultMessage = '';
+    let resultDisclaimer = '';
+    const computerChoice = getComputerChoice();
+  
+    if (playerChoice === computerChoice) {
+      resultMessage = "It's a tie!";
+      resultDisclaimer = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1) + ' ties with ' + computerChoice;
+    } else if (
+      (playerChoice === 'rock' && computerChoice === 'scissors') ||
+      (playerChoice === 'paper' && computerChoice === 'rock') ||
+      (playerChoice === 'scissors' && computerChoice === 'paper')
+    ) {
+      resultMessage = "You win!";
+      resultDisclaimer = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1) + ' beats ' + computerChoice + '.';
+      playerScore++;
+    } else {
+      resultMessage = "Computer wins!";
+      resultDisclaimer = computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1) + ' beats ' + playerChoice + '.';
+      computerScore++;
+    }
+
+}
+
