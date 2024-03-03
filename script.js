@@ -35,6 +35,7 @@ function playRound(playerChoice){
     }
 
     contentUpdate(resultMessage, resultDisclaimer);
+    updateChoices(playerChoice,computerChoice);
 
 } 
 
@@ -52,3 +53,28 @@ function contentUpdate(resultMessage, resultDisclaimer){
 
 }
 
+function updateChoices(playerChoice, computerChoice){
+    switch (playerChoice) {
+      case 'rock':
+        document.getElementById('playerSign').innerHTML = '&#x1F44A;';
+        break
+      case 'paper':
+        document.getElementById('playerSign').innerHTML = '&#x270B;';
+        break
+      case 'scissors':
+        document.getElementById('playerSign').innerHTML = '&#x270C;';
+        break
+  
+    }
+    switch (computerChoice){
+      case 'rock':
+        document.getElementById('computerSign').innerHTML = '&#x1F44A;';
+        break
+      case 'paper':
+        document.getElementById('computerSign').innerHTML = '&#x270B;';
+        break
+      case 'scissors':
+        document.getElementById('computerSign').innerHTML = '&#x270C;';
+        break
+    }
+  }
