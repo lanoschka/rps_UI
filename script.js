@@ -34,5 +34,21 @@ function playRound(playerChoice){
       computerScore++;
     }
 
+    contentUpdate(resultMessage, resultDisclaimer);
+
+} 
+
+function contentUpdate(resultMessage, resultDisclaimer){
+
+    document.getElementById('playerScore').textContent = `PLAYER: ${playerScore}`;
+    document.getElementById('computerScore').textContent = `COMPUTER: ${computerScore}`;
+  
+    document.getElementById('score-info').innerText = resultMessage;
+  
+    
+    // updateChoices(playerChoice, computerChoice);
+  
+    document.getElementById('result').innerText = resultDisclaimer;
+
 }
 
