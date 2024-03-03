@@ -33,6 +33,10 @@ function playRound(playerChoice){
       computerScore++;
     }
 
+    if (playerChoice !== computerChoice) {
+        rounds++;
+      }
+
     contentUpdate(resultMessage, resultDisclaimer, playerChoice, computerChoice);
 
 } 
@@ -75,3 +79,39 @@ function updateChoices(playerChoice, computerChoice){
         break
     }
   }
+
+function playGame(playerChoice){
+
+    playRound(playerChoice);
+
+    if (rounds === 5) {
+        let winner = '';
+        if (playerScore > computerScore) {
+          winner = "You";
+        } else if (playerScore < computerScore) {
+          winner = "Computer";
+        } else {
+          winner = "It's a"; // Grammatical correction
+        }
+    
+        alert(`${winner} win the game!`);
+
+        reset();
+    
+    }
+}
+
+function reset(){
+
+    playerScore = 0;
+    computerScore = 0;
+    rounds = 0;
+
+    document.getElementById('playerScore').textContent = `PLAYER: 0`;
+    document.getElementById('computerScore').textContent = `COMPUTER: 0`;
+    document.getElementById('computerSign').innerHTML = '&#128187;';
+    document.getElementById('playerSign').innerHTML = '&#128377;&#65039;';
+    document.getElementById('score-info').innerText = 'Choose your weapon';
+    document.getElementById('result').innerText = 'First to win Bo5 wins the game!';
+
+}
