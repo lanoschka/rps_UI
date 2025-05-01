@@ -27,10 +27,23 @@ function playRound(playerChoice){
       resultMessage = "You win!";
       resultDisclaimer = `${capitalize(playerChoice)} beats ${computerChoice}.`;
       playerScore++;
+
+      setTimeout(() => {
+        clickedButton.classList.remove("winning-button");
+        void clickedButton.offsetWidth;
+        clickedButton.classList.add("winning-button")
+      }, 50);
+
     } else {
       resultMessage = "Computer wins!";
       resultDisclaimer = `${capitalize(computerChoice)} beats ${playerChoice}.`;
       computerScore++;
+      setTimeout(() => {
+        clickedButton.classList.remove("losing-button");
+        void clickedButton.offsetWidth;
+        clickedButton.classList.add("losing-button")
+      }, 50);
+
     }
 
     if (playerChoice !== computerChoice) {
