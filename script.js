@@ -1,16 +1,63 @@
 let playerScore = 0;
 let computerScore = 0;
-let rounds = 0; // Declare rounds here
+let rounds = 0;
+
+const endgameModal = document.getElementById('endGameModal')
+const endgameMsg = document.getElementById('endGameMsg')
+const overlay = document.getElementById('overlay')
+const restartBtn = document.getElementById('restartBtn')
+
+restartBtn.addEventListener('click', () => {
+  closeEndgameModal();
+  reset();
+});
+
+overlay.addEventListener('click', closeEndgameModal);
 
 function getComputerChoice(){
     const choices = ['rock', 'paper', 'scissors'];
-    const computerChoice = choices[Math.floor(Math.random() * 3)];
-
-    return computerChoice;
+    return choices[Math.floor(Math.random() * 3)];
 }
 
+function playGame(playerChoice, clickedButton){
+  if (isGameOver()) {
+    openEndgameModal();  
+    return
+  };
+  
+    playRound(playerChoice, clickedButton);
 
-function playRound(playerChoice){
+    // if (isGameOver()) {
+    //     let winner = '';
+    //     if (playerScore > computerScore) {
+    //       winner = "You";
+    //     } else if (playerScore < computerScore) {
+    //       winner = "Computer";
+    //     } else {
+    //       winner = "It's a"; 
+    //     }
+    
+        //alert(`${winner} win the game!`);
+        if (isGameOver()) {
+          openEndgameModal()
+          setFinalMessage()
+        
+       // reset();
+    
+    }
+}
+function clearButtonEffects() {
+  const buttons = document.querySelectorAll("#game button");
+  buttons.forEach(b => {
+    b.classList.remove("winning-button", "losing-button");
+    //b.style.transform = "none";
+  });
+}
+function playRound(playerChoice, clickedButton){
+
+    const computerChoice = getComputerChoice();
+
+    clearButtonEffects();
 
     let resultMessage = '';
     let resultDisclaimer = '';
