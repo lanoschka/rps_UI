@@ -252,11 +252,18 @@ footer p{
     }
   
     .header {
-      flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
       align-items: center;
-      padding: 20px 0;
+        padding: 10px;
+        max-width: 100%;
+        overflow: hidden;
+        text-align: center;
     }
-  
+    #r, #p, #s {
+        font-size: 10vw; /* Skaluje względem szerokości ekranu */
+        margin: 5px;
+      }
     #r, #s {
       font-size: 40px;
       margin: 5px 0;
@@ -372,5 +379,38 @@ footer p{
   
     .modalActive {
       max-width: 80%;
+    }
+  }
+
+  /* Tablet and mobile - smaller header */
+@media (max-width: 1024px) {
+    .header {
+      padding: 10px 0;
+    }
+  
+    #p {
+      font-size: 60px;
+      margin: 0 10px;
+    }
+  
+    #r,
+    #s {
+      font-size: 40px;
+      margin: 0 5px;
+    }
+  }
+  
+  /* Very small devices*/
+  @media (max-width: 480px) {
+    .header {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    #r,
+    #p,
+    #s {
+      font-size: 30px;
+      margin: 0 5px;
     }
   }
