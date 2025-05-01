@@ -114,4 +114,11 @@ function reset(){
     document.getElementById('score-info').innerText = 'Choose your weapon';
     document.getElementById('result').innerText = 'First to win Bo5 wins the game!';
 
+    // endgameModal.classList.remove('active')
+    // overlay.classList.remove('active')
+
+    clearButtonEffects();
+}
+function capitalize(word) {
+   return word.charAt(0).toUpperCase() + word.slice(1);
 }
