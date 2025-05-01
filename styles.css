@@ -28,7 +28,6 @@ body{
     background-color: #12181f;
     font-family: 'Rock Paper Scissors', sans-serif;   
     display: flex;
-    align-items: baseline;
     justify-content: center;
     align-items: baseline;
     gap: 10px;
