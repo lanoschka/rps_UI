@@ -253,7 +253,7 @@ footer p{
     .header {
         flex-wrap: wrap;
         justify-content: center;
-      align-items: center;
+        align-items: center;
         padding: 10px;
         max-width: 100%;
         overflow: hidden;
@@ -263,7 +263,7 @@ footer p{
         font-size: 10vw; /* Skaluje względem szerokości ekranu */
         margin: 5px;
       }
-    #r, #s {
+     #r, #s {
       font-size: 40px;
       margin: 5px 0;
     }
@@ -271,7 +271,7 @@ footer p{
     #p {
       font-size: 60px;
       margin: 10px 0;
-    }
+    } 
   
     .scores-container {
       flex-direction: column;
