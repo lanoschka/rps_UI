@@ -215,6 +215,8 @@ footer p{
 }
 
 /* ======= responsive ======= */
+
+/* Mobile */
 @media (max-width: 768px) {
     body, html {
       font-size: 16px;
@@ -284,7 +286,7 @@ footer p{
       font-size: 14px;
     }
   }
-
+/* Tablet */
   @media (min-width: 769px) and (max-width: 1024px) {
     body, html {
       font-size: 17px;
@@ -327,7 +329,7 @@ footer p{
     }
   }
 
-
+/* Landscape phones */
   @media screen and (orientation: landscape) and (max-width: 768px) {
     #game {
       flex-direction: row;
