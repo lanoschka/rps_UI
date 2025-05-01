@@ -18,18 +18,18 @@ function playRound(playerChoice){
   
     if (playerChoice === computerChoice) {
       resultMessage = "It's a tie!";
-      resultDisclaimer = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1) + ' ties with ' + computerChoice;
+      resultDisclaimer = `${capitalize(playerChoice)} ties with ${computerChoice}.`;
     } else if (
       (playerChoice === 'rock' && computerChoice === 'scissors') ||
       (playerChoice === 'paper' && computerChoice === 'rock') ||
       (playerChoice === 'scissors' && computerChoice === 'paper')
     ) {
       resultMessage = "You win!";
-      resultDisclaimer = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1) + ' beats ' + computerChoice + '.';
+      resultDisclaimer = `${capitalize(playerChoice)} beats ${computerChoice}.`;
       playerScore++;
     } else {
       resultMessage = "Computer wins!";
-      resultDisclaimer = computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1) + ' beats ' + playerChoice + '.';
+      resultDisclaimer = `${capitalize(computerChoice)} beats ${playerChoice}.`;
       computerScore++;
     }
 
