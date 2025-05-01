@@ -126,39 +126,48 @@ function updateChoices(playerChoice, computerChoice){
         document.getElementById('playerSign').innerHTML = '&#x270C;';
         break
   
-    }
-    switch (computerChoice){
-      case 'rock':
-        document.getElementById('computerSign').innerHTML = '&#x1F44A;';
-        break
-      case 'paper':
-        document.getElementById('computerSign').innerHTML = '&#x270B;';
-        break
-      case 'scissors':
-        document.getElementById('computerSign').innerHTML = '&#x270C;';
-        break
-    }
+    // }
+    // switch (computerChoice){
+    //   case 'rock':
+    //     document.getElementById('computerSign').innerHTML = '&#x1F44A;';
+    //     break
+    //   case 'paper':
+    //     document.getElementById('computerSign').innerHTML = '&#x270B;';
+    //     break
+    //   case 'scissors':
+    //     document.getElementById('computerSign').innerHTML = '&#x270C;';
+    //     break
+    // }
+
+    const signs = {
+      rock: '&#x1F44A;',
+      paper: '&#x270B;',
+      scissors: '&#x270C;'
+    };
+
+    document.getElementById('playerSign').innerHTML = signs[playerChoice];
+    document.getElementById('computerSign').innerHTML = signs[computerChoice];
+
   }
 
-function playGame(playerChoice){
+function isGameOver() {
+  return playerScore === 3 || computerScore === 3
+}
 
-    playRound(playerChoice);
+function openEndgameModal() {
+  endgameModal.classList.add('active')
+  overlay.classList.add('active')
+}
 
-    if (rounds === 5) {
-        let winner = '';
-        if (playerScore > computerScore) {
-          winner = "You";
-        } else if (playerScore < computerScore) {
-          winner = "Computer";
-        } else {
-          winner = "It's a"; // Grammatical correction
-        }
-    
-        alert(`${winner} win the game!`);
+function closeEndgameModal() {
+  endgameModal.classList.remove('active')
+  overlay.classList.remove('active')
+}
 
-        reset();
-    
-    }
+function setFinalMessage() {
+  return playerScore > computerScore
+    ? (endgameMsg.textContent = 'You won!')
+    : (endgameMsg.textContent = 'You lost...')
 }
 
 function reset(){
