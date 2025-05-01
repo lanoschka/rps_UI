@@ -27,22 +27,9 @@ function playGame(playerChoice, clickedButton){
   
     playRound(playerChoice, clickedButton);
 
-    // if (isGameOver()) {
-    //     let winner = '';
-    //     if (playerScore > computerScore) {
-    //       winner = "You";
-    //     } else if (playerScore < computerScore) {
-    //       winner = "Computer";
-    //     } else {
-    //       winner = "It's a"; 
-    //     }
-    
-        //alert(`${winner} win the game!`);
         if (isGameOver()) {
           openEndgameModal()
           setFinalMessage()
-        
-       // reset();
     
     }
 }
@@ -50,7 +37,6 @@ function clearButtonEffects() {
   const buttons = document.querySelectorAll("#game button");
   buttons.forEach(b => {
     b.classList.remove("winning-button", "losing-button");
-    //b.style.transform = "none";
   });
 }
 function playRound(playerChoice, clickedButton){
@@ -61,7 +47,6 @@ function playRound(playerChoice, clickedButton){
 
     let resultMessage = '';
     let resultDisclaimer = '';
-    const computerChoice = getComputerChoice();
   
     if (playerChoice === computerChoice) {
       resultMessage = "It's a tie!";
@@ -105,39 +90,13 @@ function contentUpdate(resultMessage, resultDisclaimer, playerChoice, computerCh
 
     document.getElementById('playerScore').textContent = `PLAYER: ${playerScore}`;
     document.getElementById('computerScore').textContent = `COMPUTER: ${computerScore}`;
-  
     document.getElementById('score-info').innerText = resultMessage;
-  
     document.getElementById('result').innerText = resultDisclaimer;
-
     updateChoices(playerChoice, computerChoice);
 
 }
 
 function updateChoices(playerChoice, computerChoice){
-    switch (playerChoice) {
-      case 'rock':
-        document.getElementById('playerSign').innerHTML = '&#x1F44A;';
-        break
-      case 'paper':
-        document.getElementById('playerSign').innerHTML = '&#x270B;';
-        break
-      case 'scissors':
-        document.getElementById('playerSign').innerHTML = '&#x270C;';
-        break
-  
-    // }
-    // switch (computerChoice){
-    //   case 'rock':
-    //     document.getElementById('computerSign').innerHTML = '&#x1F44A;';
-    //     break
-    //   case 'paper':
-    //     document.getElementById('computerSign').innerHTML = '&#x270B;';
-    //     break
-    //   case 'scissors':
-    //     document.getElementById('computerSign').innerHTML = '&#x270C;';
-    //     break
-    // }
 
     const signs = {
       rock: '&#x1F44A;',
@@ -182,9 +141,6 @@ function reset(){
     document.getElementById('playerSign').innerHTML = '&#128377;&#65039;';
     document.getElementById('score-info').innerText = 'Choose your weapon';
     document.getElementById('result').innerText = 'First to win Bo5 wins the game!';
-
-    // endgameModal.classList.remove('active')
-    // overlay.classList.remove('active')
 
     clearButtonEffects();
 }
